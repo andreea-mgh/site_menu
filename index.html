@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-level Menu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+    <nav id="menu">
+        <div class="navbar-left">
+            there will be a logo here
+        </div>
+        <div class="navbar-right">
+            <ul>
+                <li class="menu-item"><a href="#">Consumables</a>
+                    <ul class="submenu">
+                        <li class="menu-item"><a href="#">Tea</a>
+                            <ul class="submenu">
+                                <li><a href="#">Black Tea</a></li>
+                                <li><a href="#">Green Tea</a></li>
+                                <li><a href="#">White Tea</a></li>
+                                <li><a href="#">Rooibos</a></li>
+                                <li><a href="#">Fruit and Herbal teas</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Coffee</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item"><a href="#">Products</a>
+                    <ul class="submenu">
+                        <li class="menu-item"><a href="#">Cups, Mugs, Kettles</a></li>
+                        <li class="menu-item"><a href="#">Accessories</a>
+                            <ul class="submenu">
+                                <li><a href="#">Tea Infusers</a></li>
+                                <li><a href="#">Coffee Grinders</a></li>
+                                <li><a href="#">Milk Frothers</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu-item"><a href="#">About</a>
+                    <ul class="submenu">
+                        <li class="menu-item"><a href="#">Our History</a></li>
+                        <li class="menu-item"><a href="#">Contact Us</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="content">
+        <h1>Multi-level Menu</h1>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
