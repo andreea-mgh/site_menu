@@ -1,5 +1,21 @@
 document.addEventListener('DOMContentLoaded', function() {
     const menuItems = document.querySelectorAll('.menu-item > a');
+    const hamburger = document.querySelector('.hamburger');
+    const menu = document.getElementById('menu');
+    const overlay = document.createElement('div');
+
+    overlay.classList.add('overlay');
+    document.body.appendChild(overlay);
+
+    hamburger.addEventListener('click', function() {
+        menu.classList.toggle('active');
+        overlay.classList.toggle('active');
+    });
+
+    overlay.addEventListener('click', function() {
+        menu.classList.remove('active');
+        overlay.classList.remove('active');
+    });
 
     menuItems.forEach(item => {
         item.addEventListener('click', function(event) {
@@ -19,6 +35,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // pt cand se da click in afara lor
+    document.addEventListener('click', function(event) {
+        const isClickInsideMenu = event.target.closest('.menu-item');
+        if (!isClickInsideMenu) {
+            closeAllSubmenus();
+        }
+    });
+
     function closeSiblingSubmenus(currentItem) {
         const parentMenu = currentItem.closest('ul');
         const siblings = parentMenu.querySelectorAll('.submenu');
@@ -29,14 +53,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-
-    // ca sa se inchida cand dai click inafara meniului
-    document.addEventListener('click', function(event) {
-        const isClickInsideMenu = event.target.closest('.menu-item');
-        if (!isClickInsideMenu) {
-            closeAllSubmenus();
-        }
-    });
 
     function closeAllSubmenus() {
         document.querySelectorAll('.submenu').forEach(submenu => {
